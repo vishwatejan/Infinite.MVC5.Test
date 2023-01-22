@@ -1,0 +1,37 @@
+﻿@model List<Infinite.MVC5.Test.Models.Fruits>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>List Of Fruits</h2>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>ProductName</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var prd in Model)
+    {
+       <tr>
+           <td>@prd.Id</td>
+
+           <td>@Html.ActionLink(prd.ProductName,"Details","Fruits", new { id = prd.Id }, null)</td>
+           <td>@Html.ActionLink("Edit","Edit","Fruits",new { id = prd.Id },new {@Class = "btn btn-info" })</td>
+           <td>
+               @using (Html.BeginForm("Delete", "Movies", new { id = prd.Id }, FormMethod.Post))
+                {
+                   <button type="submit" class="btn btn-danger">Delete</button>
+                }
+
+           </td>
+
+
+            
+       </tr>
+    }
+</table>
+

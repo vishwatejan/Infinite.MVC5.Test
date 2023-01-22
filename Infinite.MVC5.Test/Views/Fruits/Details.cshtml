@@ -1,0 +1,41 @@
+﻿@using Infinite.MVC5.Test.Models;
+@model Fruits
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<hr />
+@*<ul>
+     <li>@Model.Id<li>[dbo].[PackSizes]
+     <li>@Model.productName</li>
+     <li>@Model.Price</li>
+     <li>@Model.Size</li>
+     <li>@Model.Quantity</li>
+     <li>@Model.Discount</li>
+     <li>@Model.TotalPrice</li>
+     <li>@Model.Category</Id>
+    </ul>*@
+<div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item"><b>product Id :</b>@Model.Id</li>
+            <li class="list-group-item"><b>product Name :</b>@Model.ProductName</li>
+            <li class="list-group-item"><b>price :</b>@Model.Price</li>
+            <li class="list-group-item"><b>Quantity :</b>@Model.Quantity</li>
+            <li class="list-group-item"><b>Size :</b>@Model.PackSizeName.PackSizeName</li>
+            <li class="list-group-item"><b>Discount :</b>@Model.Discount</li>
+            <li class="list-group-item"><b>TotalPrice :</b>@Model.TotalPrice</li>
+            <li class="list-group-item"><b>CategoryId :</b>@Model.CategoryId</li>
+            <li class="list-group-item"><b>CategoryName :</b>@Model.CategoryName.categoryName</li>
+        </ul>
+
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        @Html.ActionLink("Back to Index", "Index", "Fruits");
+    </div>
+</div>
+
